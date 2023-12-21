@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Predict status of a PV panel</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+body {font-family: "Times New Roman", Georgia, Serif;}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Playfair Display";
+  letter-spacing: 5px;
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+    <a href="#home" class="w3-bar-item w3-button">Mai Do</a>
+    <!-- Right-sided navbar links. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+      <a href="#about" class="w3-bar-item w3-button">Project</a>
+      <a href="#menu" class="w3-bar-item w3-button">About me</a>
+      <a href="#contact" class="w3-bar-item w3-button">Contact</a>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="w3-display-container w3-content w3-wide" style="max-width:1600px;min-width:500px" id="home">
+  <img class="w3-image" src="C:\Users\Admin\Desktop\ĐỒ ÁN TỐT NGHIỆP\project-final\anh1.jpg" alt="Picture from gg" width="1600" height="800">
+  <div class="w3-display-bottomleft w3-padding-large w3-opacity">
+    <h1 class="w3-xxlarge">Me</h1>
+  </div>
+</header>
+
+<hr>
+<!-- Page content -->
+<div class="w3-content" style="max-width:1100px">
+
+  <!-- About Section -->
+  <h1 class="w3-center" id="about">HELLO</h1>
+      <p class="w3-center"><em>Welcome to my website!</em></p>
+      <!-- <p>We have created a fictional "personal" website/blog, and our fictional character is a hobby photographer. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
+        qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> -->
+  <div class="w3-row w3-padding-64" >
+    <h1 class="w3-center">PROJECT</h1>
+    <!-- <div class="w3-col m6 w3-padding-large"> -->
+      <div class="w3-col m6 w3-padding-large w3-hide-small">
+      <h5 class="w3-center">The Solar Panel Fault Detection Project</h5>
+      <p>
+        Abstract:<br>
+        There are two factors that can affect the performance of a solar panel. They are:<br>
+        Internal faults<br>
+        External disturbances<br>
+        Internal faults:<br>
+        They occur due to the shorting of the modules that make up a panel. This causes a dip in the current and voltage readings leaading to less overall power output.
+        <br>
+        External disturbances:<br>
+        They are a result of naturally occuring external factors that lessen the intensity of sunlight(irradiance) that falls on the surface of the solar panels. This also causes dips in the current and voltage values again resulting in a dip in overall power output.
+        <br>
+        The problem<br>
+        The change in readings due to internal faults can often be confused with that of external disturbances. It is the internal faults only that need attention. The external disturbances can be ignored as it may just be a passing cloud for example and should not be detected as a fault which requires attention.
+        <br>
+        Solution:<br>
+        We provide a model which can dectect the status of the PV panel. All you need is <br> V is the voltage of PV panel; I is the current of PV panel; P is the maximum capacity of the panel; G is the radiation of the sun on the solar panel per unit area m2. Provide us your number, and we will show the solution of your PV.
+      <!-- <p class="w3-large w3-text-grey w3-hide-medium">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod temporincididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p> -->
+    </div>
+   <div class="w3-col m6 w3-padding-large w3-hide-small">
+  
+    <p>Welcome to my website. I had made some modelsto detect the state of the PV panel. Wish it's useful for you! Please leave some messsage in the contact.</p>
+      <div class="picture">
+        <p><b><i class="fa fa-user w3-margin-right"></i>Some examples</b></p><br>
+        <img src="C:\Users\Admin\Desktop\ĐỒ ÁN TỐT NGHIỆP\project-final\anh1.jpg" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Photo of Me" width="500" height="333">
+      </div>
+    </div>
+
+   <!-- put data and post result -->
+      <div class="w3-row w3-padding-64" >
+      <h3 class="w3-center">PUT YOUR DATA</h3>
+      </div>
+      <div class="w3-center" >
+      <form method = "POST" action = "/predict" style="align-items: center;">    
+        <input style="width:50%;padding: 12px 20px;margin: 8px 0;display: inline-block;border: 1px solid #ccc;border-radius: 4px;box-sizing: border-box;align-items: center;" type="text" name="v" placeholder="Input V"> 
+    
+        <input style="width: 50%;padding: 12px 20px;margin: 8px 0;display: inline-block;border: 1px solid #ccc;border-radius: 4px;box-sizing: border-box;align-items: center;" type="text" name="i" placeholder="Input I">
+    
+        <input style="width: 50%;padding: 12px 20px;margin: 8px 0;display: inline-block;border: 1px solid #ccc;border-radius: 4px;box-sizing: border-box;align-items: center;" type="text" name="p" placeholder="Input P">
+    
+        <input style="width: 50%;padding: 12px 20px;margin: 8px 0;display: inline-block;border: 1px solid #ccc;border-radius: 4px;box-sizing: border-box;align-items: center;" type="text" name="g" placeholder="Input G">
+        <h5>Choose one of these models below.</h5>
+        <select name="predict_type" id="predict_type" style="width: 50%;padding: 12px 20px;margin: 8px 0;display: inline-block;border: 1px solid #ccc;border-radius: 4px;box-sizing: border-box;" >
+            <option value="DECISION">DECISION</option>
+            <option value="KNN">KNN</option>
+            <option value="RandomForest">RandomForest</option>
+            <option value="GA">GA</option>
+          </select>
+          <br>
+        <input style="width: 50%;background-color: #4CAF50;color: white;padding: 14px 20px;margin: 8px 0;border: none;border-radius: 4px;cursor: pointer;" type = "submit" value="Upload">  
+    </form>
+    <h3 style="width: 50%;padding: 12px 20px;margin: 8px 0;display: inline-block;border: 1px solid #ccc;border-radius: 4px;box-sizing: border-box;align-items: left;" >RESULT:{{result}} </h3>
+  </div>
+  </div>
+  <hr>
+  <!-- Menu Section -->
+  
+  <div class="w3-row w3-padding-64" id="menu">
+    <div class="w3-content w3-container w3-padding-64" id="about">
+      <h3 class="w3-center">ABOUT ME</h3>
+      <p class="w3-center"><em>Do Thi Dieu Mai</em></p>
+      <!-- <p>Life is short but the world is wide.</p> -->
+      <div class="w3-row">
+        <div class="w3-col m6 w3-center w3-padding-large">
+          <p><b><i class="fa fa-user w3-margin-right"></i>My Name</b></p><br>
+          <img src="C:\Users\Admin\Desktop\ĐỒ ÁN TỐT NGHIỆP\project-final\anh1.jpg" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Photo of Me" width="500" height="333">
+        </div>
+    
+        <!-- Hide this text on small devices -->
+        <div class="w3-col m6 w3-hide-small w3-padding-large">
+          <p>Hi! I'm Mai and I'm 22 years old. It's my last year in my university and the purpose I made this website is mainly for my final project at school. I hope it can help you to detect and choose the right solution to protect your PV panel. </p>
+        </div>
+      </div>
+      <!-- <p class="w3-large w3-center w3-padding-16">Im really good at:</p>
+      <p class="w3-wide"><i class="fa fa-camera"></i>Photography</p>
+      <div class="w3-light-grey">
+        <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:90%">90%</div>
+      </div>
+      <p class="w3-wide"><i class="fa fa-laptop"></i>Web Design</p>
+      <div class="w3-light-grey">
+        <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:85%">85%</div>
+      </div>
+      <p class="w3-wide"><i class="fa fa-photo"></i>Photoshop</p>
+      <div class="w3-light-grey">
+        <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:75%">75%</div>
+      </div>
+    </div> -->
+    
+    <!-- <div class="w3-row w3-center w3-dark-grey w3-padding-16">
+      <div class="w3-quarter w3-section">
+        <span class="w3-xlarge">14+</span><br>
+        Partners
+      </div>
+      <div class="w3-quarter w3-section">
+        <span class="w3-xlarge">55+</span><br>
+        Projects Done
+      </div>
+      <div class="w3-quarter w3-section">
+        <span class="w3-xlarge">89+</span><br>
+        Happy Clients
+      </div>
+      <div class="w3-quarter w3-section">
+        <span class="w3-xlarge">150+</span><br>
+        Meetings
+      </div>
+    </div> 
+  </div>-->
+
+  <hr>
+  <!-- Contact  -->
+  <div class="w3-content w3-container w3-padding-64" id="contact">
+    <h3 class="w3-center">CONTACT</h3>
+    <p class="w3-center"><em>I'd love your feedback!</em></p>
+  
+    <div class="w3-row w3-padding-32 w3-section">
+      <div class="w3-col m4 w3-container">
+        <img src="C:\Users\Admin\Desktop\ĐỒ ÁN TỐT NGHIỆP\project-final\anh1.jpg" class="w3-image w3-round" style="width:100%">
+      </div>
+      <div class="w3-col m8 w3-panel">
+        <div class="w3-large w3-margin-bottom">
+          <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Ha Noi University of Sience and Technlogy<br>
+          <!-- <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Phone: +00 151515<br> -->
+          <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email: dothidieumai2001@mail.com<br>
+        </div>
+        <p>Swing by for a cup of <i class="fa fa-coffee"></i>, or leave me a note:</p>
+        <form action="/action_page.php" target="_blank">
+          <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+            <div class="w3-half">
+              <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+            </div>
+            <div class="w3-half">
+              <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
+            </div>
+          </div>
+          <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
+          <button class="w3-button w3-black w3-right w3-section" type="submit">
+            <i class="fa fa-paper-plane"></i> SEND MESSAGE
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+<!-- End page content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-32">
+  <p>Powered by <a href="https://selabhust.github.io/home/" title="My laboratory" target="_blank" class="w3-hover-text-green">My laboratory</a></p>
+</footer>
+
+</body>
+</html>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+<!--  
+ 
+ <!DOCTYPE html>
+<html>  
+<head>  
+  <title>Predict type of status of PV</title>
+</head>
+<body>  
+ <h2>hế lu, Mai Đỗ đây</h2>
+ <h3>Hãy nhập các thông số Điện áp, Dòng điện, Công suất và Cường độ bức xạ của tấm pin cần được phân loại</h3>
+ <form method = "POST" action = "/predict">    
+     <input style="
+       width: 100%;
+       padding: 12px 20px;
+       margin: 8px 0;
+       display: inline-block;
+       border: 1px solid #ccc;
+       border-radius: 4px;
+       box-sizing: border-box;
+     " type="text" name="v" placeholder="Input V"> 
+ 
+     <input style="
+     width: 100%;
+     padding: 12px 20px;
+     margin: 8px 0;
+     display: inline-block;
+     border: 1px solid #ccc;
+     border-radius: 4px;
+     box-sizing: border-box;
+   " type="text" name="i" placeholder="Input I">
+ 
+     <input style="
+     width: 100%;
+     padding: 12px 20px;
+     margin: 8px 0;
+     display: inline-block;
+     border: 1px solid #ccc;
+     border-radius: 4px;
+     box-sizing: border-box;
+   " type="text" name="p" placeholder="Input P">
+ 
+     <input style="
+     width: 100%;
+     padding: 12px 20px;
+     margin: 8px 0;
+     display: inline-block;
+     border: 1px solid #ccc;
+     border-radius: 4px;
+     box-sizing: border-box;
+   " type="text" name="g" placeholder="Input G">
+ 
+     <h3>Chọn cách bạn muốn</h3>
+     <select name="predict_type" id="predict_type">
+         <option value="DECISION">DECISION</option>
+         <option value="KNN">KNN</option>
+         <option value="RandomForest">RandomForest</option>
+         <option value="GA">GA</option>
+       </select>
+     <input style="width: 100%;
+     background-color: #4CAF50;
+     color: white;
+     padding: 14px 20px;
+     margin: 8px 0;
+     border: none;
+     border-radius: 4px;
+     cursor: pointer;" type = "submit" value="Upload">  
+ </form>
+ <p style="color:green;"> RESULT= {{result}} </p>
+ 
+ 
+</body>  
+</html>
+ -->
